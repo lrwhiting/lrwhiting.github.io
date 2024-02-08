@@ -12,13 +12,14 @@ website:
       - text: Blog
         href: blog-listing.qmd
   page-footer: 
-    center: "Powered with GitHub and Quarto<br>© YOUR NAME, 2023"
+    center: "Powered with GitHub and Quarto<br>© lrwhiting, 2023"
 
 format:
   html:
     theme: 
-      light: flatly
-      dark: darkly
+      light: Quartz
+      dark: Vapor
+      
     mainfont: system-ui; 
     highlight-style: atom-one
     css: styles.css

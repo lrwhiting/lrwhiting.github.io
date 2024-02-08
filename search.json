@@ -21,60 +21,74 @@
     "text": "2.2 MPG and a Type of Cars\nThe following boxplot shows how the distribution of highway MPG (hwy) varies by a type of cars (class) 🚙 🚚 🚐.\n\nggplot(data = mpg) +\n  geom_boxplot(aes(x = class, y = hwy, fill = class),\n               show.legend = F) +\n  labs(x = \"Class\", y = \"Highway\\nMPG\")"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "YOUR NAME",
+    "objectID": "danl-200-quarto.html",
+    "href": "danl-200-quarto.html",
+    "title": "R Basics",
     "section": "",
-    "text": "Finley Malloc majors in Data Analytics at SUNY Geneseo. When not working on data analytics, Finley enjoys spending time unicycling and playing with her pet iguana."
+    "text": "Plain text\nDANL and DANL\nDANL and DANL\n\n\nCheck out Classwork 3 - Markdown Basics"
   },
   {
-    "objectID": "index.html#education",
-    "href": "index.html#education",
-    "title": "YOUR NAME",
-    "section": "Education",
-    "text": "Education\nState University of New York at Geneseo | Geneseo, NY  B.S. in Data Analytics | Aug 2022 - May 2026  Minor in Business Administration"
-  },
-  {
-    "objectID": "index.html#experience",
-    "href": "index.html#experience",
-    "title": "YOUR NAME",
-    "section": "Experience",
-    "text": "Experience\nStarbucks Analytics | Data Analyst Intern | May 2024 - Aug 2024"
-  },
-  {
-    "objectID": "posts/starwars/starwars_df.html",
-    "href": "posts/starwars/starwars_df.html",
-    "title": "Starwars",
+    "objectID": "danl-200-quarto.html#dive-into-markdown-syntax",
+    "href": "danl-200-quarto.html#dive-into-markdown-syntax",
+    "title": "R Basics",
     "section": "",
-    "text": "Let’s analyze the starwars data:\nstarwars &lt;- read_csv(\"https://bcdanl.github.io/data/starwars.csv\")"
+    "text": "Check out Classwork 3 - Markdown Basics"
   },
   {
-    "objectID": "posts/starwars/starwars_df.html#variable-description-for-starwars-data.frame",
-    "href": "posts/starwars/starwars_df.html#variable-description-for-starwars-data.frame",
-    "title": "Starwars",
-    "section": "Variable Description for starwars data.frame",
-    "text": "Variable Description for starwars data.frame\nThe following describes the variables in the starwars data.frame.\n\nfilms List of films the character appeared in\nname Name of the character\nspecies Name of species\nheight Height (cm)\nmass Weight (kg)\nhair_color, skin_color, eye_color Hair, skin, and eye colors\nbirth_year Year born (BBY = Before Battle of Yavin)\nsex The biological sex of the character, namely male, female, hermaphroditic, or none (as in the case for Droids).\ngender The gender role or gender identity of the character as determined by their personality or the way they were programmed (as in the case for Droids).\nhomeworld Name of homeworld"
+    "objectID": "danl-200-quarto.html#r-as-a-calculator",
+    "href": "danl-200-quarto.html#r-as-a-calculator",
+    "title": "R Basics",
+    "section": "2.1 1. R as a Calculator",
+    "text": "2.1 1. R as a Calculator\nR can be used as a simple calculator. You can perform arithmetic operations like addition (+), subtraction (-), multiplication (*), and division (/). For example, typing 2 + 2 in the R console will give you 4."
   },
   {
-    "objectID": "posts/starwars/starwars_df.html#human-vs.-droid",
-    "href": "posts/starwars/starwars_df.html#human-vs.-droid",
-    "title": "Starwars",
-    "section": "Human vs. Droid",
-    "text": "Human vs. Droid\n\nggplot(data = \n         starwars %&gt;% \n         filter(species %in% c(\"Human\", \"Droid\"))) +\n  geom_boxplot(aes(x = species, y = mass, \n                   fill = species),\n               show.legend = FALSE)"
+    "objectID": "danl-200-quarto.html#variables",
+    "href": "danl-200-quarto.html#variables",
+    "title": "R Basics",
+    "section": "2.2 Variables",
+    "text": "2.2 Variables\nVariables in R are used to store data. You can create a variable using the assignment operator &lt;- (option/Alt + -). For example:\n\n\nCode\nmy_variable &lt;- 10\n\n\nThis will store the value 10 in my_variable."
   },
   {
-    "objectID": "posts/post-with-code/index.html",
-    "href": "posts/post-with-code/index.html",
-    "title": "Post With Code",
-    "section": "",
-    "text": "This is a post with executable code with no space in the folder name.\n\n1 + 1\n\n[1] 2"
+    "objectID": "danl-200-quarto.html#data-types",
+    "href": "danl-200-quarto.html#data-types",
+    "title": "R Basics",
+    "section": "2.3 Data Types",
+    "text": "2.3 Data Types\n\nR has several basic data types:\n\nNumeric: For decimal values like 2.5.\nInteger: For whole numbers like 2L (the L tells R it is an integer).\nCharacter: For text or string values, e.g., \"Hello\".\nLogical: For boolean values (TRUE or FALSE)."
   },
   {
-    "objectID": "posts/welcome/index.html",
-    "href": "posts/welcome/index.html",
-    "title": "Welcome To My Blog",
-    "section": "",
-    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+    "objectID": "danl-200-quarto.html#vectors",
+    "href": "danl-200-quarto.html#vectors",
+    "title": "R Basics",
+    "section": "2.4 Vectors",
+    "text": "2.4 Vectors\nVectors are a basic data structure in R. They contain elements of the same type. You can create a vector using the c() function:\n\n\nCode\nmy_vector &lt;- c(1, 2, 3, 4, 5)"
+  },
+  {
+    "objectID": "danl-200-quarto.html#data-frames",
+    "href": "danl-200-quarto.html#data-frames",
+    "title": "R Basics",
+    "section": "2.5 Data Frames",
+    "text": "2.5 Data Frames\nData frames are used for storing data tables in R. It is a list of vectors of equal length. For example, to create a simple data frame:\n\n\nCode\ndf &lt;- data.frame(\n  Name = c(\"Alice\", \"Bob\"), \n  Age = c(25, 30)\n  )"
+  },
+  {
+    "objectID": "danl-200-quarto.html#functions",
+    "href": "danl-200-quarto.html#functions",
+    "title": "R Basics",
+    "section": "2.6 Functions",
+    "text": "2.6 Functions\nFunctions are used to carry out specific tasks in R. For example, sum() is a function that adds numbers together:\n\n\nCode\nsum(1, 2, 3) # Returns 6\n\n\n[1] 6"
+  },
+  {
+    "objectID": "danl-200-quarto.html#packages",
+    "href": "danl-200-quarto.html#packages",
+    "title": "R Basics",
+    "section": "2.7 Packages",
+    "text": "2.7 Packages\nR has a vast collection of packages for various statistical tasks. You can install a package using install.packages(\"packageName\") and load it using library(packageName)."
+  },
+  {
+    "objectID": "danl-200-quarto.html#help-system",
+    "href": "danl-200-quarto.html#help-system",
+    "title": "R Basics",
+    "section": "2.8 Help System",
+    "text": "2.8 Help System\nTo get help on a specific function or topic, use the help() function or the shorthand ?, like ?sum on R Console."
   },
   {
     "objectID": "posts/beer-markets/beer-markets.html",
@@ -117,6 +131,62 @@
     "title": "Beer Markets",
     "section": "Promotional Impact",
     "text": "Promotional Impact\nWe’ll assess the impact of promotions on the quantity of beer purchased. For this analysis, we can calculate the average quantity purchased with and without promotions and visualize the difference. We’ll do this for each brand to see which brands are most affected by promotions.\nLet’s begin this analysis by looking at the average quantity purchased with and without promotions for each brand.\n\n# Calculate average quantity purchased with and without promotions for each brand\npromo_impact = beer_data.groupby(['brand', 'promo']).agg({'quantity':'mean'}).reset_index()\n\n# Pivot the data to have promo and non-promo side by side for each brand\npromo_impact_pivot = promo_impact.pivot(index='brand', columns='promo', values='quantity').reset_index()\npromo_impact_pivot.columns = ['brand', 'non_promo', 'promo']\n\n# Calculate the difference in average quantity purchased between promo and non-promo\npromo_impact_pivot['promo_impact'] = promo_impact_pivot['promo'] - promo_impact_pivot['non_promo']\n\n# Sort by the impact of promo\npromo_impact_pivot_sorted = promo_impact_pivot.sort_values('promo_impact', ascending=False)\n\n# Plotting the difference in average quantity purchased between promo and non-promo for each brand\nplt.figure(figsize=(12, 10))\nsns.barplot(x='promo_impact', y='brand', data=promo_impact_pivot_sorted, palette='viridis')\nplt.title('Impact of Promotions on Average Quantity Purchased by Brand')\nplt.xlabel('Difference in Average Quantity Purchased (Promo - Non-Promo)')\nplt.ylabel('Brand')\nplt.show()\n\n\n\n\nThe bar chart illustrates the impact of promotions on the average quantity of beer purchased by brand. A positive value indicates that, on average, more beer is purchased when there is a promotion compared to when there isn’t. Some brands appear to be significantly more influenced by promotions, with customers buying more when the products are on sale or promotion.\nThis comprehensive analysis has provided insights into purchase patterns, demographic preferences, price sensitivity, and the impact of promotions on beer purchases."
+  },
+  {
+    "objectID": "posts/welcome/index.html",
+    "href": "posts/welcome/index.html",
+    "title": "Welcome To My Blog",
+    "section": "",
+    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+  },
+  {
+    "objectID": "posts/post-with-code/index.html",
+    "href": "posts/post-with-code/index.html",
+    "title": "Post With Code",
+    "section": "",
+    "text": "This is a post with executable code with no space in the folder name.\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "posts/starwars/starwars_df.html",
+    "href": "posts/starwars/starwars_df.html",
+    "title": "Starwars",
+    "section": "",
+    "text": "Let’s analyze the starwars data:\nstarwars &lt;- read_csv(\"https://bcdanl.github.io/data/starwars.csv\")"
+  },
+  {
+    "objectID": "posts/starwars/starwars_df.html#variable-description-for-starwars-data.frame",
+    "href": "posts/starwars/starwars_df.html#variable-description-for-starwars-data.frame",
+    "title": "Starwars",
+    "section": "Variable Description for starwars data.frame",
+    "text": "Variable Description for starwars data.frame\nThe following describes the variables in the starwars data.frame.\n\nfilms List of films the character appeared in\nname Name of the character\nspecies Name of species\nheight Height (cm)\nmass Weight (kg)\nhair_color, skin_color, eye_color Hair, skin, and eye colors\nbirth_year Year born (BBY = Before Battle of Yavin)\nsex The biological sex of the character, namely male, female, hermaphroditic, or none (as in the case for Droids).\ngender The gender role or gender identity of the character as determined by their personality or the way they were programmed (as in the case for Droids).\nhomeworld Name of homeworld"
+  },
+  {
+    "objectID": "posts/starwars/starwars_df.html#human-vs.-droid",
+    "href": "posts/starwars/starwars_df.html#human-vs.-droid",
+    "title": "Starwars",
+    "section": "Human vs. Droid",
+    "text": "Human vs. Droid\n\nggplot(data = \n         starwars %&gt;% \n         filter(species %in% c(\"Human\", \"Droid\"))) +\n  geom_boxplot(aes(x = species, y = mass, \n                   fill = species),\n               show.legend = FALSE)"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "YOUR NAME",
+    "section": "",
+    "text": "Finley Malloc majors in Data Analytics at SUNY Geneseo. When not working on data analytics, Finley enjoys spending time unicycling and playing with her pet iguana."
+  },
+  {
+    "objectID": "index.html#education",
+    "href": "index.html#education",
+    "title": "YOUR NAME",
+    "section": "Education",
+    "text": "Education\nState University of New York at Geneseo | Geneseo, NY  B.S. in Data Analytics | Aug 2022 - May 2026  Minor in Business Administration"
+  },
+  {
+    "objectID": "index.html#experience",
+    "href": "index.html#experience",
+    "title": "YOUR NAME",
+    "section": "Experience",
+    "text": "Experience\nStarbucks Analytics | Data Analyst Intern | May 2024 - Aug 2024"
   },
   {
     "objectID": "blog-listing.html",
