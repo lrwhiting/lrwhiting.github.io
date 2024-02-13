@@ -93,7 +93,10 @@ This will store the value `10` in `my_variable`.
 Vectors are a basic data structure in R. They contain elements of the same type. You can create a vector using the `c()` function:
 
 ```{r}
-my_vector <- c(1, 2, 3, 4, 5)
+my_vector <- c(1, 2, 3, 4, 5,"a")
+num_vec <- c(1,2,3)
+chr_vec <- c('a','f','q')
+
 ```
 
 <br><br>
