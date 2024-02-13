@@ -15,6 +15,8 @@ usethis::create_github_token()  # to creat a brand new token
   # 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
 
   # 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
+  
+  # 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
 
 # quarto render
 
