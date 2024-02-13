@@ -6,12 +6,14 @@ install.packages("gitcreds")
 #git commit -m " "
 #git push -u origin master
 
-gitcreds::gitcreds_set() # replace the token 
 usethis::create_github_token()  # to creat a brand new token 
+gitcreds::gitcreds_set() # replace the token 
 
 #tokens
   # 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
   # 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
+  # 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
+
 # quarto render
 
 
