@@ -9,7 +9,7 @@ about:
   links:
     - icon: linkedin
       text: LinkedIn
-      href: https://www.linkedin.com/in/lillian-whiting-908823219/
+      href: www.linkedin.com/in/lillian-whiting-908823219
     - icon: Handshake
       text: Handshake
       href: https://app.joinhandshake.com/stu/users/32756194
