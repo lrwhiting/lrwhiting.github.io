@@ -13,12 +13,6 @@ gitcreds::gitcreds_set() # replace the token
   # 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
   # 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
   # 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
+  # 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
 
 # quarto render
-
-
-fare <- "10.00"
-tip <- "2.00"
-tax <- "0.80"
-str_c(fare + tip + tax,sep="The total trip cost is:")
-      

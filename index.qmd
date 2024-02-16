@@ -9,7 +9,7 @@ about:
   links:
     - icon: linkedin
       text: LinkedIn
-      href: https://www.linkedin.com/feed/
+      href: https://www.linkedin.com/in/lillian-whiting-908823219/
     - icon: Handshake
       text: Handshake
       href: https://app.joinhandshake.com/stu/users/32756194
@@ -26,21 +26,22 @@ about:
 ---
 
 
-Lillian Whiting majors in Sustainable Studies and minors in Data Analytics at SUNY Geneseo. When not working on data analytics, Lillian enjoys spending time crafting gifts for Friend and family.
+Lillian Whiting majors in Sustainable Studies and minors in Data Analytics at SUNY Geneseo. When not working on data analytics, Lillian enjoys spending time crafting gifts for Friends and family.
 
 ## Education
 
 State University of New York at Geneseo | Geneseo, NY <br>
-B.S. in Sustainable Studies | Aug 2021 - May 2025 <br>
+B.S. in Sustainability Studies | Aug 2021 - May 2025 <br>
 Minor in Data Analytics 
 
 ## Experience
 
 Ticketing Officer | Work Study, Parking Enforcement | Geneseo, NY | SEPT 2021 – MAY 2022, SEPT 2022 – MAY 2023, SEPT 2023 - MAY 2024 
 
-
 Office Intern | Genesee County Job Center | Batavia, NY  | JULY 2022 – AUG 2022
 
+Cashier | Sammy Sunglasses| Batavia, NY | MAY 2021 – AUG 2021, 
+MAY 2019 – AUG 2019
 
 Intern | Go Art | Batavia, NY | MAY 2021 – AUG 2021, 
 MAY 2019 – AUG 2019
