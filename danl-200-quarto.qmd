@@ -60,7 +60,68 @@ Check out [Classwork 3 - Markdown Basics](https://bcdanl.github.io/200/danl-cw/d
 
 R is a powerful language and environment for statistical computing and graphics. It is widely used among statisticians and data analysts for data analysis and developing statistical software. Here are some basic concepts and elements of R to help you get started:
 
+Question 0.
 
+Provide your GitHub username. lrwhiting
+
+
+
+
+
+Question 1.
+
+base-R provides the R object state.name. Write an R code to assign state.name to a variable, US_states.
+
+Answer:
+```{r}
+
+
+```
+
+
+
+Question 2.
+
+The temp_F vector contains the average high temperatures in January for the following cities: Seoul, Lagos, Paris, Rio de Janeiro, San Juan, and Rochester.
+```{r}
+temp_F <- c(35, 88, 42, 84, 81, 30)
+```
+Create a new vector named temp_C that stores the converted Celsius temperatures. Below is the conversion formula:
+
+Answer:
+```{r}
+
+```
+
+Question 3.
+
+Write an R code to calculate the standard deviation (SD) of the integer vector x below manually. That is to calculate the SD without using the sd() function.
+```{r}
+x <- 1:25
+```
+Also, write an R code to test whether the standard deviation you calculate manually above is equal to sd(x).
+Answer:
+```{r}
+
+```
+
+Question 4.
+
+Write an R code to read the CSV file, https://bcdanl.github.io/data/mlb_teams.csv using the tidyverse’s read_csv() function, and assign it to MLB_teams.
+Answer:
+```{r}
+
+```
+
+Question 5.
+
+Write an R code to provide summary statistics—mean, standard deviation, minimum, first quartile, median, third quartile, and maximum—for variables in the MLB_teams data.frame.
+
+Answer:
+```{r}
+
+
+```
 <br><br>
 
 ## 1. R as a Calculator
