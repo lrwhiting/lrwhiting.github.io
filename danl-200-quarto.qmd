@@ -1,0 +1,155 @@
+---
+title: ???? 
+subtitle: "DANL 200: Introduction to Data Analytics"
+author: 
+  - name: Lily Whiting
+  - name: Logan Hartstein
+  - name: Tyler Thibert
+date: last-modified
+
+execute: 
+  echo: true    # true false
+  eval: true    # true false
+  warning: false    # true false
+  message: false    # true false
+  fig-width: 9
+  # fig-height: 5
+  
+format: 
+  html:
+    toc: true    # true false
+    number-sections: true    # true false
+    code-fold: show    # true false show       # https://quarto.org/docs/output-formats/html-code.html
+    code-tools: true    # true false
+    highlight-style: atom-one        # atom-one tango espresso   # https://quarto.org/docs/output-formats/html-code.html#highlighting
+---
+
+# Downlowds
+```{r setup}
+#| include: false
+library(tidyverse)
+library(skimr)
+beer_markets <- read_csv("https://bcdanl.github.io/data/beer_markets_all.csv")
+```
+
+# Markdown Syntax
+
+Plain text
+
+*DANL* and DANL
+
+**DANL** and DANL
+
+
+## Lily Graph
+
+<br><br>
+
+
+# point: child to number of beers 
+```{r}
+beer_markets <- beer_markets |> 
+  mutate(children = 
+           case_when(childrenUnder6 == T & children6to17 == T ~ 'kids under 6 to 17',
+                     childrenUnder6 == T & children6to17 == F ~ 'Only 6 and under',
+                     childrenUnder6 == F & children6to17 == T ~ 'Only 6 to 17',
+                     childrenUnder6 == F & children6to17 == F ~ 'No kids'
+           ),
+         .before = childrenUnder6) |> 
+  mutate(children = factor(children,
+                           levels = c('No kids', 'Only 6 and under', 'Only 6 to 17','kids under 6 to 17')))
+
+ggplot(data = beer_markets) +
+  geom_histogram(mapping = aes( x = quantity,
+                                fill = children),
+                 position = "dodge",
+                 bins = 2)
+  #facet_wrap(~promo)
+
+  # fingure out to facet wrap for promo
+```
+
+<br><br>
+
+# Bar: How many single house hold buy beer and how  different house hold are impacted with promos
+Facet 
+Cow
+Employment 
+Education
+```{r}
+ggplot(data = beer_markets) +
+  geom_bar(mapping = aes(x = singlefamilyhome,
+                         fill = promo))
+
+ggplot(data = beer_markets) +
+  geom_histogram(mapping = aes( x = quantity,
+                                fill = singlefamilyhome),
+                 position = "dodge",
+                 bins = 2)
+
+
+
+```
+
+
+<br><br>
+
+
+# Bar: At differnt employment status How many beer do they duy and how  different employment status are impacted with promos
+```{r}
+ggplot(data = beer_markets) +
+  geom_histogram(mapping = aes( x = quantity,
+                                fill = employment),
+                 position = "dodge",
+                 bins = 2)
+ggplot(data = beer_markets) +
+  geom_bar(mapping = aes(x = employment,
+                         fill = promo ))
+```
+<br><br>
+
+# Bar:  differnt ages to how  many beer they buy and how  different ages are impacted with promos
+
+```{r}
+ggplot(data = beer_markets) +
+  geom_histogram(mapping = aes( x = quantity,
+                                fill = age),
+                 position = "dodge",
+                 bins = 2)
+ggplot(data = beer_markets) +
+  geom_bar(mapping = aes(x = age,
+                         fill = promo ))
+```
+
+
+
+
+
+
+
+
+
+
+## Functions
+
+
+<br><br>
+
+## Packages
+
+```{r}
+library(tidyverse)
+library(skimr)
+```
+
+<br><br>
+
+
+# References
+
+- [https://quarto.org/docs/output-formats/html-basics.html](https://quarto.org/docs/output-formats/html-basics.html)
+
+- [https://quarto.org/docs/websites/](https://quarto.org/docs/websites/)
+
+- [R for Data Science](http://r4ds.hadley.nz) by [Hadley Wickham](https://hadley.nz)
+

@@ -1,0 +1,191 @@
+[
+  {
+    "objectID": "project.html",
+    "href": "project.html",
+    "title": "Let’s analyze the beer_data data:",
+    "section": "",
+    "text": "beer_data &lt;- read_csv(\"https://bcdanl.github.io/data/beer_markets_all.csv\")\n\nRows: 73115 Columns: 25\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (14): _purchase_desc, brand, container, market, state, buyertype, income...\ndbl  (5): hh, quantity, dollar_spent, beer_floz, price_per_floz\nlgl  (6): promo, childrenUnder6, children6to17, microwave, dishwasher, singl...\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\n#| results: asis\nrmarkdown::paged_table(beer_data) \n\n\n\n  \n\n\n\n\n\nThe following describes the variables in the beer_data data.frame.\n\nhh: Household identifier\n_purchase_desc: Description of the purchase\nquantity: The quantity of beer purchased\nbrand: The brand of beer\ndollar_spent: The amount spent\nbeer_floz: Fluid ounces of beer\nprice_per_floz: Price per fluid ounce\ncontainer: Type of container\npromo: Whether the purchase was on promotion\nmarket: The market where the purchase was made\nDemographics: age, employment status, degree, class of worker (cow), race, and household information like microwave, dishwasher, tvcable, singlefamilyhome ( a house intended for one family to live in at a time), and npeople (number of people in the household)"
+  },
+  {
+    "objectID": "project.html#summary-statistics",
+    "href": "project.html#summary-statistics",
+    "title": "DANL Project",
+    "section": "2.1 Summary Statistics",
+    "text": "2.1 Summary Statistics\n\nmpg &lt;- ggplot2::mpg\n\n\n\n\n  \n\n\n\nskim(mpg) %&gt;% \n  select(-n_missing)\n\n\nData summary\n\n\nName\nmpg\n\n\nNumber of rows\n234\n\n\nNumber of columns\n11\n\n\n_______________________\n\n\n\nColumn type frequency:\n\n\n\ncharacter\n6\n\n\nnumeric\n5\n\n\n________________________\n\n\n\nGroup variables\nNone\n\n\n\nVariable type: character\n\n\n\nskim_variable\ncomplete_rate\nmin\nmax\nempty\nn_unique\nwhitespace\n\n\n\n\nmanufacturer\n1\n4\n10\n0\n15\n0\n\n\nmodel\n1\n2\n22\n0\n38\n0\n\n\ntrans\n1\n8\n10\n0\n10\n0\n\n\ndrv\n1\n1\n1\n0\n3\n0\n\n\nfl\n1\n1\n1\n0\n5\n0\n\n\nclass\n1\n3\n10\n0\n7\n0\n\n\n\nVariable type: numeric\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\ncomplete_rate\nmean\nsd\np0\np25\np50\np75\np100\nhist\n\n\n\n\ndispl\n1\n3.47\n1.29\n1.6\n2.4\n3.3\n4.6\n7\n▇▆▆▃▁\n\n\nyear\n1\n2003.50\n4.51\n1999.0\n1999.0\n2003.5\n2008.0\n2008\n▇▁▁▁▇\n\n\ncyl\n1\n5.89\n1.61\n4.0\n4.0\n6.0\n8.0\n8\n▇▁▇▁▇\n\n\ncty\n1\n16.86\n4.26\n9.0\n14.0\n17.0\n19.0\n35\n▆▇▃▁▁\n\n\nhwy\n1\n23.44\n5.95\n12.0\n18.0\n24.0\n27.0\n44\n▅▅▇▁▁"
+  },
+  {
+    "objectID": "project.html#mpg-and-a-type-of-cars",
+    "href": "project.html#mpg-and-a-type-of-cars",
+    "title": "DANL Project",
+    "section": "2.2 MPG and a Type of Cars",
+    "text": "2.2 MPG and a Type of Cars\nThe following boxplot shows how the distribution of highway MPG (hwy) varies by a type of cars (class) 🚙 🚚 🚐.\n\nggplot(data = mpg) +\n  geom_boxplot(aes(x = class, y = hwy, fill = class),\n               show.legend = F) +\n  labs(x = \"Class\", y = \"Highway\\nMPG\")"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Lillian Whiting",
+    "section": "",
+    "text": "Lillian Whiting Majors in Sustainable Studies and Minors in Data Analytics at SUNY Geneseo. When not working on data analytics, Lillian enjoys spending time crafting gifts for Friends and family."
+  },
+  {
+    "objectID": "index.html#education",
+    "href": "index.html#education",
+    "title": "Lillian Whiting",
+    "section": "Education",
+    "text": "Education\nState University of New York at Geneseo | Geneseo, NY  B.S. in Sustainability Studies | Aug 2021 - May 2025  Minor in Data Analytics"
+  },
+  {
+    "objectID": "index.html#experience",
+    "href": "index.html#experience",
+    "title": "Lillian Whiting",
+    "section": "Experience",
+    "text": "Experience\nTicketing Officer | Work Study, Parking Enforcement | Geneseo, NY | SEPT 2021 – MAY 2022, SEPT 2022 – MAY 2023, SEPT 2023 - MAY 2024\nOffice Intern | Genesee County Job Center | Batavia, NY | JULY 2022 – AUG 2022\nCashier | Sammy Sunglasses| Batavia, NY | MAY 2021 – AUG 2021, MAY 2019 – AUG 2019\nIntern | Go Art | Batavia, NY | MAY 2021 – AUG 2021, MAY 2019 – AUG 2019\nOffice Intern | Coastal Staffing | Batavia, NY | JULY 2020 – AUG 2020"
+  },
+  {
+    "objectID": "posts/welcome/index.html",
+    "href": "posts/welcome/index.html",
+    "title": "Welcome To My Blog",
+    "section": "",
+    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+  },
+  {
+    "objectID": "posts/post-with-code/index.html",
+    "href": "posts/post-with-code/index.html",
+    "title": "Post With Code",
+    "section": "",
+    "text": "This is a post with executable code with no space in the folder name.\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "posts/starwars/starwars_df.html",
+    "href": "posts/starwars/starwars_df.html",
+    "title": "Starwars",
+    "section": "",
+    "text": "Let’s analyze the starwars data:\nstarwars &lt;- read_csv(\"https://bcdanl.github.io/data/starwars.csv\")"
+  },
+  {
+    "objectID": "posts/starwars/starwars_df.html#variable-description-for-starwars-data.frame",
+    "href": "posts/starwars/starwars_df.html#variable-description-for-starwars-data.frame",
+    "title": "Starwars",
+    "section": "Variable Description for starwars data.frame",
+    "text": "Variable Description for starwars data.frame\nThe following describes the variables in the starwars data.frame.\n\nfilms List of films the character appeared in\nname Name of the character\nspecies Name of species\nheight Height (cm)\nmass Weight (kg)\nhair_color, skin_color, eye_color Hair, skin, and eye colors\nbirth_year Year born (BBY = Before Battle of Yavin)\nsex The biological sex of the character, namely male, female, hermaphroditic, or none (as in the case for Droids).\ngender The gender role or gender identity of the character as determined by their personality or the way they were programmed (as in the case for Droids).\nhomeworld Name of homeworld"
+  },
+  {
+    "objectID": "posts/starwars/starwars_df.html#human-vs.-droid",
+    "href": "posts/starwars/starwars_df.html#human-vs.-droid",
+    "title": "Starwars",
+    "section": "Human vs. Droid",
+    "text": "Human vs. Droid\n\nggplot(data = \n         starwars %&gt;% \n         filter(species %in% c(\"Human\", \"Droid\"))) +\n  geom_boxplot(aes(x = species, y = mass, \n                   fill = species),\n               show.legend = FALSE)"
+  },
+  {
+    "objectID": "blog-listing.html",
+    "href": "blog-listing.html",
+    "title": "Insightful Analytics",
+    "section": "",
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\nStarwars\n\n\n\n\n\n\n\n\n\nOct 30, 2023\n\n\nYour Name\n\n\n3 min\n\n\n\n\n\n\n  \n\n\n\n\nPost With Code\n\n\n\n\n\n\n\n\n\nOct 30, 2023\n\n\nYOUR NAME\n\n\n1 min\n\n\n\n\n\n\n  \n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\n\n\nOct 27, 2023\n\n\nYOUR NAME\n\n\n1 min\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/Beer_Markets_Demograhic/Beer_Markets_Demograhic.html",
+    "href": "posts/Beer_Markets_Demograhic/Beer_Markets_Demograhic.html",
+    "title": "Let’s analyze the beer_data data:",
+    "section": "",
+    "text": "beer_data &lt;- read_csv(\"https://bcdanl.github.io/data/beer_markets_all.csv\")\n\nRows: 73115 Columns: 25\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (14): _purchase_desc, brand, container, market, state, buyertype, income...\ndbl  (5): hh, quantity, dollar_spent, beer_floz, price_per_floz\nlgl  (6): promo, childrenUnder6, children6to17, microwave, dishwasher, singl...\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\n#| results: asis\nrmarkdown::paged_table(beer_data) \n\n\n\n  \n\n\n\n\n\nThe following describes the variables in the beer_data data.frame.\n\nhh: Household identifier\n_purchase_desc: Description of the purchase\nquantity: The quantity of beer purchased\nbrand: The brand of beer\ndollar_spent: The amount spent\nbeer_floz: Fluid ounces of beer\nprice_per_floz: Price per fluid ounce\ncontainer: Type of container\npromo: Whether the purchase was on promotion\nmarket: The market where the purchase was made\nDemographics: age, employment status, degree, class of worker (cow), race, and household information like microwave, dishwasher, tvcable, singlefamilyhome ( a house intended for one family to live in at a time), and npeople (number of people in the household)"
+  },
+  {
+    "objectID": "posts/Beer_Markets_Demograhic/Beer_Markets_Demograhic.html#variable-description-for-beer_data-data.frame",
+    "href": "posts/Beer_Markets_Demograhic/Beer_Markets_Demograhic.html#variable-description-for-beer_data-data.frame",
+    "title": "Let’s analyze the beer_data data:",
+    "section": "",
+    "text": "The following describes the variables in the beer_data data.frame.\n\nhh: Household identifier\n_purchase_desc: Description of the purchase\nquantity: The quantity of beer purchased\nbrand: The brand of beer\ndollar_spent: The amount spent\nbeer_floz: Fluid ounces of beer\nprice_per_floz: Price per fluid ounce\ncontainer: Type of container\npromo: Whether the purchase was on promotion\nmarket: The market where the purchase was made\nDemographics: age, employment status, degree, class of worker (cow), race, and household information like microwave, dishwasher, tvcable, singlefamilyhome ( a house intended for one family to live in at a time), and npeople (number of people in the household)"
+  },
+  {
+    "objectID": "posts/Beer_Markets_Demograhic/Beer_Markets_Demograhic.html#point-child-to-number-of-beers",
+    "href": "posts/Beer_Markets_Demograhic/Beer_Markets_Demograhic.html#point-child-to-number-of-beers",
+    "title": "Let’s analyze the beer_data data:",
+    "section": "point: child to number of beers",
+    "text": "point: child to number of beers\n\nbeer_data &lt;- beer_data |&gt; \n  mutate(children = \n           case_when(childrenUnder6 == T & children6to17 == T ~ 'kids under 6 to 17',\n                     childrenUnder6 == T & children6to17 == F ~ 'Only 6 and under',\n                     childrenUnder6 == F & children6to17 == T ~ 'Only 6 to 17',\n                     childrenUnder6 == F & children6to17 == F ~ 'No kids'\n           ),\n         .before = childrenUnder6) |&gt; \n  mutate(children = factor(children,\n                           levels = c('No kids', 'Only 6 and under', 'Only 6 to 17','kids under 6 to 17')))"
+  },
+  {
+    "objectID": "posts/Beer_Markets_Demograhic/Beer_Markets_Demograhic.html#point-child-to-number-of-bee",
+    "href": "posts/Beer_Markets_Demograhic/Beer_Markets_Demograhic.html#point-child-to-number-of-bee",
+    "title": "Let’s analyze the beer_data data:",
+    "section": "point: child to number of bee",
+    "text": "point: child to number of bee\n\nggplot(data = beer_data) +\n  geom_histogram(mapping = aes( x = quantity,\n                                fill = children),\n                 position = \"dodge\",\n                 bins = 2)\n\n\n\n\nIn this graph shows the quantity of beers people buy compare with if they have kids and it is shown that people who don’t have any childern buy the largest amount of bear by the 1000’s though people that have kids from 6-17 come in second"
+  },
+  {
+    "objectID": "posts/Beer_Markets_Demograhic/Beer_Markets_Demograhic.html#point-child-to-number-of-beer",
+    "href": "posts/Beer_Markets_Demograhic/Beer_Markets_Demograhic.html#point-child-to-number-of-beer",
+    "title": "Let’s analyze the beer_data data:",
+    "section": "point: child to number of beer",
+    "text": "point: child to number of beer\n\nggplot(data = beer_data) +\n     geom_bar(mapping = aes( x = children,\n                             ),\n              position = \"dodge\",\n              bins = 2)\n\nWarning in geom_bar(mapping = aes(x = children, ), position = \"dodge\", bins =\n2): Ignoring unknown parameters: `bins`"
+  },
+  {
+    "objectID": "posts/Beer_Markets_Demograhic/Beer_Markets_Demograhic.html#bar-how-many-single-house-hold-buy-beer-and-how-different-house-hold-are-impacted-with-promos",
+    "href": "posts/Beer_Markets_Demograhic/Beer_Markets_Demograhic.html#bar-how-many-single-house-hold-buy-beer-and-how-different-house-hold-are-impacted-with-promos",
+    "title": "Let’s analyze the beer_data data:",
+    "section": "Bar: How many single house hold buy beer and how different house hold are impacted with promos",
+    "text": "Bar: How many single house hold buy beer and how different house hold are impacted with promos\n\nggplot(data = beer_data) +\n  geom_bar(mapping = aes(x = singlefamilyhome,\n                         fill = promo))\n\n\n\n\nfamilys that are in single households buy more beer then muliti family in one house and there are less people buys beer under the influence of a promo\n\nggplot(data = beer_data) +\n  geom_histogram(mapping = aes( x = quantity,\n                                fill = singlefamilyhome),\n                 position = \"dodge\",\n                 \n                 bins = 2)"
+  },
+  {
+    "objectID": "posts/Beer_Markets_Demograhic/Beer_Markets_Demograhic.html#bar-at-differnt-employment-status-how-many-beer-do-they-duy-and-how-different-employment-status-are-impacted-with-promos",
+    "href": "posts/Beer_Markets_Demograhic/Beer_Markets_Demograhic.html#bar-at-differnt-employment-status-how-many-beer-do-they-duy-and-how-different-employment-status-are-impacted-with-promos",
+    "title": "Let’s analyze the beer_data data:",
+    "section": "Bar: At differnt employment status How many beer do they duy and how different employment status are impacted with promos",
+    "text": "Bar: At differnt employment status How many beer do they duy and how different employment status are impacted with promos\n\nggplot(data = beer_data) +\n  geom_histogram(mapping = aes( x = quantity,\n                                fill = employment),\n                 position = \"dodge\",\n                 bins = 2)\n\n\n\n\n\nggplot(data = beer_data) +\n  geom_bar(mapping = aes(x = employment,\n                         fill = promo ))"
+  },
+  {
+    "objectID": "posts/Beer_Markets_Demograhic/Beer_Markets_Demograhic.html#bar-differnt-ages-to-how-many-beer-they-buy-and-how-different-ages-are-impacted-with-promos",
+    "href": "posts/Beer_Markets_Demograhic/Beer_Markets_Demograhic.html#bar-differnt-ages-to-how-many-beer-they-buy-and-how-different-ages-are-impacted-with-promos",
+    "title": "Let’s analyze the beer_data data:",
+    "section": "Bar: differnt ages to how many beer they buy and how different ages are impacted with promos",
+    "text": "Bar: differnt ages to how many beer they buy and how different ages are impacted with promos\n\nggplot(data = beer_data) +\n  geom_histogram(mapping = aes( x = quantity,\n                                fill = age),\n                 position = \"dodge\",\n                 bins = 2)\n\n\n\n\n\nggplot(data = beer_data) +\n  geom_bar(mapping = aes(x = age,\n                         fill = promo ))\n\n\n\n\n ## Graph\n\nbeer_data2 &lt;- beer_data |&gt;\n  group_by(state, brand) |&gt;\n  summarise(n = n()) |&gt;\n  slice_max(n, n=10)\n\n`summarise()` has grouped output by 'state'. You can override using the\n`.groups` argument.\n\n\n\nskim(beer_data)\n\n\nData summary\n\n\nName\nbeer_data\n\n\nNumber of rows\n73115\n\n\nNumber of columns\n26\n\n\n_______________________\n\n\n\nColumn type frequency:\n\n\n\ncharacter\n14\n\n\nfactor\n1\n\n\nlogical\n6\n\n\nnumeric\n5\n\n\n________________________\n\n\n\nGroup variables\nNone\n\n\n\nVariable type: character\n\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\ncomplete_rate\nmin\nmax\nempty\nn_unique\nwhitespace\n\n\n\n\n_purchase_desc\n0\n1\n12\n29\n0\n115\n0\n\n\nbrand\n0\n1\n9\n13\n0\n5\n0\n\n\ncontainer\n0\n1\n3\n30\n0\n7\n0\n\n\nmarket\n0\n1\n5\n20\n0\n92\n0\n\n\nstate\n0\n1\n4\n20\n0\n49\n0\n\n\nbuyertype\n0\n1\n4\n7\n0\n3\n0\n\n\nincome\n0\n1\n5\n8\n0\n5\n0\n\n\nage\n0\n1\n3\n5\n0\n4\n0\n\n\nemployment\n0\n1\n4\n4\n0\n3\n0\n\n\ndegree\n0\n1\n2\n7\n0\n4\n0\n\n\ncow\n0\n1\n4\n25\n0\n4\n0\n\n\nrace\n0\n1\n5\n8\n0\n5\n0\n\n\ntvcable\n0\n1\n4\n7\n0\n3\n0\n\n\nnpeople\n0\n1\n1\n5\n0\n5\n0\n\n\n\nVariable type: factor\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\ncomplete_rate\nordered\nn_unique\ntop_counts\n\n\n\n\nchildren\n0\n1\nFALSE\n4\nNo : 55570, Onl: 12539, Onl: 2585, kid: 2421\n\n\n\nVariable type: logical\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\ncomplete_rate\nmean\ncount\n\n\n\n\npromo\n0\n1\n0.20\nFAL: 58563, TRU: 14552\n\n\nchildrenUnder6\n0\n1\n0.07\nFAL: 68109, TRU: 5006\n\n\nchildren6to17\n0\n1\n0.20\nFAL: 58155, TRU: 14960\n\n\nmicrowave\n0\n1\n0.99\nTRU: 72676, FAL: 439\n\n\ndishwasher\n0\n1\n0.73\nTRU: 53258, FAL: 19857\n\n\nsinglefamilyhome\n0\n1\n0.81\nTRU: 59058, FAL: 14057\n\n\n\nVariable type: numeric\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\ncomplete_rate\nmean\nsd\np0\np25\np50\np75\np100\nhist\n\n\n\n\nhh\n0\n1\n17407721.61\n11582147.34\n2000235.00\n8223438.00\n8413624.00\n30171315.00\n30440718.00\n▂▇▁▁▇\n\n\nquantity\n0\n1\n1.32\n1.15\n1.00\n1.00\n1.00\n1.00\n48.00\n▇▁▁▁▁\n\n\ndollar_spent\n0\n1\n13.78\n8.72\n0.51\n8.97\n12.99\n16.38\n159.13\n▇▁▁▁▁\n\n\nbeer_floz\n0\n1\n265.93\n199.52\n12.00\n144.00\n216.00\n360.00\n9216.00\n▇▁▁▁▁\n\n\nprice_per_floz\n0\n1\n0.06\n0.01\n0.00\n0.05\n0.06\n0.06\n0.23\n▃▇▁▁▁\n\n\n\n\n\n\nbeer_data2 &lt;- beer_data |&gt;\n  group_by(income, dollar_spent) |&gt;\n  summarise(n = n()) \n\n`summarise()` has grouped output by 'income'. You can override using the\n`.groups` argument.\n\n\n\naverage_spent_by_income &lt;- beer_data %&gt;%\n  group_by(income) %&gt;%\n  summarize(average_dollar_spent = mean(dollar_spent, na.rm = TRUE)) |&gt; \n  mutate(income = factor(income,\n                         levels = c(\"under20k\", \n                                    \"20-60k\",\n                                    \"60-100k\",\n                                    \"100-200k\",\n                                    \"200k+\")))\n\n\n\nggplot(average_spent_by_income, aes(x = income, y = average_dollar_spent ))+\n  geom_point()\n\n\n\n\n\nThis graph is very interesting. It shows us how much each income bracket spends on average when purchasing beer. Unsurprisingly, the wealthier groups tend to spend more on average. What did surprise me though, is the fact that the lower income groups only spend around $2 less per purchase. It goes to show the difference in priorities between wealthy and poor people. Furthermore, this graph shows that alcohol consumption is something all income levels find important considering that they each spend similar amounts of money when buying alcohol.\n ##Graph\n\nbeer_data2 &lt;- beer_data |&gt; \n  count(state, income) |&gt; \n  group_by(state) |&gt; \n  mutate(total = sum(n)) |&gt; \n  ungroup() |&gt; \n  filter(dense_rank(-total)&lt;=10) |&gt; \n  mutate(state = fct_reorder(state, total))\n\nggplot(beer_data2)+\n  geom_bar(aes(y = state, fill = income, x = n),\n           stat = \"identity\", position = \"fill\")\n\n\n\n\n\nThis graph shows the proportion of alcohol bought by each income group by state. In almost every state, the 20-60k group is spending the most on beer while the 200k+ group buys the least in every state observed. This is surprising because most people would expect that the group with the most money would buy the most beer. I think the reason for this is because people who are addicted to alcohol tend to have less money. The people who can control their usage are much more responsible with not only their drinking, but also their finances.\n ##Graph\n\nggplot(data = beer_data, aes(x = promo, y = quantity, fill = promo)) +\n  geom_bar(stat = \"identity\", position = \"dodge\", width = 0.7) +  \n  labs(x = \"Promotion\", y = \"Quantity Purchased\", fill = \"Promotion\") +  \n  scale_fill_manual(values = c(\"#1f78b4\", \"#e31a1c\"), guide = FALSE) + \n  theme_minimal() \n\nWarning: The `guide` argument in `scale_*()` cannot be `FALSE`. This was deprecated in\nggplot2 3.3.4.\nℹ Please use \"none\" instead.\n\n\n\n\n\n\nThis graph details the significance of how promotions can effect or not effect the amount of beer people buy. In this data however it shows that people buy more beer when there isnt a promotion then when there is.\n\n##uyr\n\nggplot(data = beer_data) +\n  geom_bar(mapping = aes(x = quantity, fill = buyertype))\n\n\n\n  ggplot(data = beer_data, aes(x = factor(quantity), fill = buyertype)) +\n  geom_bar(position = \"dodge\", width = 0.7) +  \n  labs(x = \"Quantity Purchased\", y = \"Count\", fill = \"Buyer Type\") +  \n  scale_fill_viridis_d() +  \n  theme_minimal()  \n\n\n\n\nIn this graph the data shows the comparison of how much beer people will buy if they are married, female or male. The data indicates that the people who buy the most beer are people who are married."
+  },
+  {
+    "objectID": "project.html#variable-description-for-beer_data-data.frame",
+    "href": "project.html#variable-description-for-beer_data-data.frame",
+    "title": "Let’s analyze the beer_data data:",
+    "section": "",
+    "text": "The following describes the variables in the beer_data data.frame.\n\nhh: Household identifier\n_purchase_desc: Description of the purchase\nquantity: The quantity of beer purchased\nbrand: The brand of beer\ndollar_spent: The amount spent\nbeer_floz: Fluid ounces of beer\nprice_per_floz: Price per fluid ounce\ncontainer: Type of container\npromo: Whether the purchase was on promotion\nmarket: The market where the purchase was made\nDemographics: age, employment status, degree, class of worker (cow), race, and household information like microwave, dishwasher, tvcable, singlefamilyhome ( a house intended for one family to live in at a time), and npeople (number of people in the household)"
+  },
+  {
+    "objectID": "project.html#point-child-to-number-of-beers",
+    "href": "project.html#point-child-to-number-of-beers",
+    "title": "Let’s analyze the beer_data data:",
+    "section": "point: child to number of beers",
+    "text": "point: child to number of beers\n\nbeer_data &lt;- beer_data |&gt; \n  mutate(children = \n           case_when(childrenUnder6 == T & children6to17 == T ~ 'kids under 6 to 17',\n                     childrenUnder6 == T & children6to17 == F ~ 'Only 6 and under',\n                     childrenUnder6 == F & children6to17 == T ~ 'Only 6 to 17',\n                     childrenUnder6 == F & children6to17 == F ~ 'No kids'\n           ),\n         .before = childrenUnder6) |&gt; \n  mutate(children = factor(children,\n                           levels = c('No kids', 'Only 6 and under', 'Only 6 to 17','kids under 6 to 17')))"
+  },
+  {
+    "objectID": "project.html#point-child-to-number-of-bee",
+    "href": "project.html#point-child-to-number-of-bee",
+    "title": "Let’s analyze the beer_data data:",
+    "section": "point: child to number of bee",
+    "text": "point: child to number of bee\n\nggplot(data = beer_data) +\n  geom_histogram(mapping = aes( x = quantity,\n                                fill = children),\n                 position = \"dodge\",\n                 bins = 2)\n\n\n\n\nIn this graph shows the quantity of beers people buy compare with if they have kids and it is shown that people who don’t have any childern buy the largest amount of bear by the 1000’s though people that have kids from 6-17 come in second"
+  },
+  {
+    "objectID": "project.html#point-child-to-number-of-beer",
+    "href": "project.html#point-child-to-number-of-beer",
+    "title": "Let’s analyze the beer_data data:",
+    "section": "point: child to number of beer",
+    "text": "point: child to number of beer\n\nggplot(data = beer_data) +\n     geom_bar(mapping = aes( x = children,\n                             ),\n              position = \"dodge\",\n              bins = 2)\n\nWarning in geom_bar(mapping = aes(x = children, ), position = \"dodge\", bins =\n2): Ignoring unknown parameters: `bins`"
+  },
+  {
+    "objectID": "project.html#bar-how-many-single-house-hold-buy-beer-and-how-different-house-hold-are-impacted-with-promos",
+    "href": "project.html#bar-how-many-single-house-hold-buy-beer-and-how-different-house-hold-are-impacted-with-promos",
+    "title": "Let’s analyze the beer_data data:",
+    "section": "Bar: How many single house hold buy beer and how different house hold are impacted with promos",
+    "text": "Bar: How many single house hold buy beer and how different house hold are impacted with promos\n\nggplot(data = beer_data) +\n  geom_bar(mapping = aes(x = singlefamilyhome,\n                         fill = promo))\n\n\n\n\nfamilys that are in single households buy more beer then muliti family in one house and there are less people buys beer under the influence of a promo\n\nggplot(data = beer_data) +\n  geom_histogram(mapping = aes( x = quantity,\n                                fill = singlefamilyhome),\n                 position = \"dodge\",\n                 \n                 bins = 2)"
+  },
+  {
+    "objectID": "project.html#bar-at-differnt-employment-status-how-many-beer-do-they-duy-and-how-different-employment-status-are-impacted-with-promos",
+    "href": "project.html#bar-at-differnt-employment-status-how-many-beer-do-they-duy-and-how-different-employment-status-are-impacted-with-promos",
+    "title": "Let’s analyze the beer_data data:",
+    "section": "Bar: At differnt employment status How many beer do they duy and how different employment status are impacted with promos",
+    "text": "Bar: At differnt employment status How many beer do they duy and how different employment status are impacted with promos\n\nggplot(data = beer_data) +\n  geom_histogram(mapping = aes( x = quantity,\n                                fill = employment),\n                 position = \"dodge\",\n                 bins = 2)\n\n\n\n\n\nggplot(data = beer_data) +\n  geom_bar(mapping = aes(x = employment,\n                         fill = promo ))"
+  },
+  {
+    "objectID": "project.html#bar-differnt-ages-to-how-many-beer-they-buy-and-how-different-ages-are-impacted-with-promos",
+    "href": "project.html#bar-differnt-ages-to-how-many-beer-they-buy-and-how-different-ages-are-impacted-with-promos",
+    "title": "Let’s analyze the beer_data data:",
+    "section": "Bar: differnt ages to how many beer they buy and how different ages are impacted with promos",
+    "text": "Bar: differnt ages to how many beer they buy and how different ages are impacted with promos\n\nggplot(data = beer_data) +\n  geom_histogram(mapping = aes( x = quantity,\n                                fill = age),\n                 position = \"dodge\",\n                 bins = 2)\n\n\n\n\n\nggplot(data = beer_data) +\n  geom_bar(mapping = aes(x = age,\n                         fill = promo ))\n\n\n\n\n ## Graph\n\nbeer_data2 &lt;- beer_data |&gt;\n  group_by(state, brand) |&gt;\n  summarise(n = n()) |&gt;\n  slice_max(n, n=10)\n\n`summarise()` has grouped output by 'state'. You can override using the\n`.groups` argument.\n\n\n\nskim(beer_data)\n\n\nData summary\n\n\nName\nbeer_data\n\n\nNumber of rows\n73115\n\n\nNumber of columns\n26\n\n\n_______________________\n\n\n\nColumn type frequency:\n\n\n\ncharacter\n14\n\n\nfactor\n1\n\n\nlogical\n6\n\n\nnumeric\n5\n\n\n________________________\n\n\n\nGroup variables\nNone\n\n\n\nVariable type: character\n\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\ncomplete_rate\nmin\nmax\nempty\nn_unique\nwhitespace\n\n\n\n\n_purchase_desc\n0\n1\n12\n29\n0\n115\n0\n\n\nbrand\n0\n1\n9\n13\n0\n5\n0\n\n\ncontainer\n0\n1\n3\n30\n0\n7\n0\n\n\nmarket\n0\n1\n5\n20\n0\n92\n0\n\n\nstate\n0\n1\n4\n20\n0\n49\n0\n\n\nbuyertype\n0\n1\n4\n7\n0\n3\n0\n\n\nincome\n0\n1\n5\n8\n0\n5\n0\n\n\nage\n0\n1\n3\n5\n0\n4\n0\n\n\nemployment\n0\n1\n4\n4\n0\n3\n0\n\n\ndegree\n0\n1\n2\n7\n0\n4\n0\n\n\ncow\n0\n1\n4\n25\n0\n4\n0\n\n\nrace\n0\n1\n5\n8\n0\n5\n0\n\n\ntvcable\n0\n1\n4\n7\n0\n3\n0\n\n\nnpeople\n0\n1\n1\n5\n0\n5\n0\n\n\n\nVariable type: factor\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\ncomplete_rate\nordered\nn_unique\ntop_counts\n\n\n\n\nchildren\n0\n1\nFALSE\n4\nNo : 55570, Onl: 12539, Onl: 2585, kid: 2421\n\n\n\nVariable type: logical\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\ncomplete_rate\nmean\ncount\n\n\n\n\npromo\n0\n1\n0.20\nFAL: 58563, TRU: 14552\n\n\nchildrenUnder6\n0\n1\n0.07\nFAL: 68109, TRU: 5006\n\n\nchildren6to17\n0\n1\n0.20\nFAL: 58155, TRU: 14960\n\n\nmicrowave\n0\n1\n0.99\nTRU: 72676, FAL: 439\n\n\ndishwasher\n0\n1\n0.73\nTRU: 53258, FAL: 19857\n\n\nsinglefamilyhome\n0\n1\n0.81\nTRU: 59058, FAL: 14057\n\n\n\nVariable type: numeric\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\ncomplete_rate\nmean\nsd\np0\np25\np50\np75\np100\nhist\n\n\n\n\nhh\n0\n1\n17407721.61\n11582147.34\n2000235.00\n8223438.00\n8413624.00\n30171315.00\n30440718.00\n▂▇▁▁▇\n\n\nquantity\n0\n1\n1.32\n1.15\n1.00\n1.00\n1.00\n1.00\n48.00\n▇▁▁▁▁\n\n\ndollar_spent\n0\n1\n13.78\n8.72\n0.51\n8.97\n12.99\n16.38\n159.13\n▇▁▁▁▁\n\n\nbeer_floz\n0\n1\n265.93\n199.52\n12.00\n144.00\n216.00\n360.00\n9216.00\n▇▁▁▁▁\n\n\nprice_per_floz\n0\n1\n0.06\n0.01\n0.00\n0.05\n0.06\n0.06\n0.23\n▃▇▁▁▁\n\n\n\n\n\n\nbeer_data2 &lt;- beer_data |&gt;\n  group_by(income, dollar_spent) |&gt;\n  summarise(n = n()) \n\n`summarise()` has grouped output by 'income'. You can override using the\n`.groups` argument.\n\n\n\naverage_spent_by_income &lt;- beer_data %&gt;%\n  group_by(income) %&gt;%\n  summarize(average_dollar_spent = mean(dollar_spent, na.rm = TRUE)) |&gt; \n  mutate(income = factor(income,\n                         levels = c(\"under20k\", \n                                    \"20-60k\",\n                                    \"60-100k\",\n                                    \"100-200k\",\n                                    \"200k+\")))\n\n\n\nggplot(average_spent_by_income, aes(x = income, y = average_dollar_spent ))+\n  geom_point()\n\n\n\n\n\nThis graph is very interesting. It shows us how much each income bracket spends on average when purchasing beer. Unsurprisingly, the wealthier groups tend to spend more on average. What did surprise me though, is the fact that the lower income groups only spend around $2 less per purchase. It goes to show the difference in priorities between wealthy and poor people. Furthermore, this graph shows that alcohol consumption is something all income levels find important considering that they each spend similar amounts of money when buying alcohol.\n ##Graph\n\nbeer_data2 &lt;- beer_data |&gt; \n  count(state, income) |&gt; \n  group_by(state) |&gt; \n  mutate(total = sum(n)) |&gt; \n  ungroup() |&gt; \n  filter(dense_rank(-total)&lt;=10) |&gt; \n  mutate(state = fct_reorder(state, total))\n\nggplot(beer_data2)+\n  geom_bar(aes(y = state, fill = income, x = n),\n           stat = \"identity\", position = \"fill\")\n\n\n\n\n\nThis graph shows the proportion of alcohol bought by each income group by state. In almost every state, the 20-60k group is spending the most on beer while the 200k+ group buys the least in every state observed. This is surprising because most people would expect that the group with the most money would buy the most beer. I think the reason for this is because people who are addicted to alcohol tend to have less money. The people who can control their usage are much more responsible with not only their drinking, but also their finances.\n ##Graph\n\nggplot(data = beer_data, aes(x = promo, y = quantity, fill = promo)) +\n  geom_bar(stat = \"identity\", position = \"dodge\", width = 0.7) +  \n  labs(x = \"Promotion\", y = \"Quantity Purchased\", fill = \"Promotion\") +  \n  scale_fill_manual(values = c(\"#1f78b4\", \"#e31a1c\"), guide = FALSE) + \n  theme_minimal() \n\nWarning: The `guide` argument in `scale_*()` cannot be `FALSE`. This was deprecated in\nggplot2 3.3.4.\nℹ Please use \"none\" instead.\n\n\n\n\n\n\nThis graph details the significance of how promotions can effect or not effect the amount of beer people buy. In this data however it shows that people buy more beer when there isnt a promotion then when there is.\n\n##uyr\n\nggplot(data = beer_data) +\n  geom_bar(mapping = aes(x = quantity, fill = buyertype))\n\n\n\n  ggplot(data = beer_data, aes(x = factor(quantity), fill = buyertype)) +\n  geom_bar(position = \"dodge\", width = 0.7) +  \n  labs(x = \"Quantity Purchased\", y = \"Count\", fill = \"Buyer Type\") +  \n  scale_fill_viridis_d() +  \n  theme_minimal()  \n\n\n\n\nIn this graph the data shows the comparison of how much beer people will buy if they are married, female or male. The data indicates that the people who buy the most beer are people who are married."
+  }
+]

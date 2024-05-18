@@ -1,0 +1,269 @@
+---
+title: Beer Market Demograhic  
+author: 
+  - name: Lily Whiting
+  - name: Logan Hartstein
+  - name: Tyler Thibert
+date: last-modified
+
+
+
+execute: 
+  warning: false
+  message: false
+  code-tools: true
+  
+toc: true
+
+
+---
+
+```{r}
+#| include: false
+library(tidyverse)
+library(skimr)
+library(ggplot2)
+library(dplyr)
+
+```
+
+# Let's analyze the `beer_data` data:
+
+```{r}
+beer_data <- read_csv("https://bcdanl.github.io/data/beer_markets_all.csv")
+#| results: asis
+rmarkdown::paged_table(beer_data) 
+```
+
+## Variable Description for `beer_data` data.frame
+
+The following describes the variables in the `beer_data` data.frame.
+
+
+- `hh`: Household identifier
+- `_purchase_desc`: Description of the purchase
+- `quantity`: The quantity of beer purchased
+- `brand`: The brand of beer
+- `dollar_spent`: The amount spent
+- `beer_floz`: Fluid ounces of beer
+- `price_per_floz`: Price per fluid ounce
+- `container`: Type of container
+- `promo`: Whether the purchase was on promotion
+- `market`: The market where the purchase was made
+- Demographics: `age`, `employment` status, `degree`, class of worker (`cow`), `race`, and household information like `microwave`, `dishwasher`, `tvcable`, `singlefamilyhome` ( a house intended for one family to live in at a time), and `npeople` (number of people in the household)
+
+# Introduction
+
+Alcohol is an extremely popular beverage around the world. In 2022, Americans spent around $261.4 billion on alcoholic beverages. It is a very profitable business and there are hundreds of companies getting a cut of it. In this exploratory project, we will be researching how certain factors affect the beer market. We will work to answer questions such as does the amount of children you have affect the quantity of beer you buy? Does your income level affect the average amount of money you spend on beer? This type of information, which is only attainable through data exploration and analysis, is very important. All types of companies use massive amounts of data to figure out how much they should spend on advertising, who they should be marketing their product to, and where the most profitable places to sell their product are. There is a whole business of data farming so that companies can target their ads to people who are likely to buy the product. This type of work and research is very applicable in the real world and has provided companies with a way to be more efficient and profitable with their business strategies. 
+
+
+
+<br><br>
+
+
+## point: child to number of beers 
+```{r}
+beer_data <- beer_data |> 
+  mutate(children = 
+           case_when(childrenUnder6 == T & children6to17 == T ~ 'kids under 6 to 17',
+                     childrenUnder6 == T & children6to17 == F ~ 'Only 6 and under',
+                     childrenUnder6 == F & children6to17 == T ~ 'Only 6 to 17',
+                     childrenUnder6 == F & children6to17 == F ~ 'No kids'
+           ),
+         .before = childrenUnder6) |> 
+  mutate(children = factor(children,
+                           levels = c('No kids', 'Only 6 and under', 'Only 6 to 17','kids under 6 to 17')))
+
+
+```
+
+## point: child to number of bee
+```{r}
+ggplot(data = beer_data) +
+  geom_histogram(mapping = aes( x = quantity,
+                                fill = children),
+                 position = "dodge",
+                 bins = 2)
+```
+In this graph shows the quantity of beers people buy compare with if they have kids and it is shown that people who don't have any childern buy the largest amount of bear by the 1000's though people that have kids from 6-17 come in second 
+
+## point: child to number of beer
+```{r}
+ggplot(data = beer_data) +
+     geom_bar(mapping = aes( x = children,
+                             ),
+              position = "dodge",
+              bins = 2)
+```
+
+<br><br>
+
+## Bar: How many single house hold buy beer and how  different house hold are impacted with promos
+
+```{r}
+ggplot(data = beer_data) +
+  geom_bar(mapping = aes(x = singlefamilyhome,
+                         fill = promo))
+
+
+
+```
+familys that are in single households buy more beer then muliti family in one house and there are less people buys beer under the influence of a promo 
+
+
+```{r}
+ggplot(data = beer_data) +
+  geom_histogram(mapping = aes( x = quantity,
+                                fill = singlefamilyhome),
+                 position = "dodge",
+                 
+                 bins = 2)
+```
+
+
+<br><br>
+
+
+## Bar: At differnt employment status How many beer do they duy and how  different employment status are impacted with promos
+```{r}
+ggplot(data = beer_data) +
+  geom_histogram(mapping = aes( x = quantity,
+                                fill = employment),
+                 position = "dodge",
+                 bins = 2)
+
+```
+```{r}
+ggplot(data = beer_data) +
+  geom_bar(mapping = aes(x = employment,
+                         fill = promo ))
+```
+
+
+<br><br>
+
+## Bar:  differnt ages to how  many beer they buy and how  different ages are impacted with promos
+
+
+```{r}
+ggplot(data = beer_data) +
+  geom_histogram(mapping = aes( x = quantity,
+                                fill = age),
+                 position = "dodge",
+                 bins = 2)
+
+```
+
+
+
+```{r}
+ggplot(data = beer_data) +
+  geom_bar(mapping = aes(x = age,
+                         fill = promo ))
+```
+
+<br><br>
+## Graph
+```{r}
+beer_data2 <- beer_data |>
+  group_by(state, brand) |>
+  summarise(n = n()) |>
+  slice_max(n, n=10)
+```
+
+```{r}
+skim(beer_data)
+```
+
+```{r}
+beer_data2 <- beer_data |>
+  group_by(income, dollar_spent) |>
+  summarise(n = n()) 
+```
+
+```{r}
+average_spent_by_income <- beer_data %>%
+  group_by(income) %>%
+  summarize(average_dollar_spent = mean(dollar_spent, na.rm = TRUE)) |> 
+  mutate(income = factor(income,
+                         levels = c("under20k", 
+                                    "20-60k",
+                                    "60-100k",
+                                    "100-200k",
+                                    "200k+")))
+
+
+
+ggplot(average_spent_by_income, aes(x = income, y = average_dollar_spent ))+
+  geom_point()
+```
+
+<br><br>
+
+This graph is very interesting. It shows us how much each income bracket spends on average when purchasing beer. Unsurprisingly, the wealthier groups tend to spend more on average. What did surprise me though, is the fact that the lower income groups only spend around $2 less per purchase. It goes to show the difference in priorities between wealthy and poor people. Furthermore, this graph shows that alcohol consumption is something all income levels find important considering that they each spend similar amounts of money when buying alcohol.
+
+<br><br>
+##Graph
+```{r}
+#| fig-height: 10
+beer_data2 <- beer_data |> 
+  count(state, income) |> 
+  group_by(state) |> 
+  mutate(total = sum(n)) |> 
+  ungroup() |> 
+  filter(dense_rank(-total)<=10) |> 
+  mutate(state = fct_reorder(state, total))
+
+ggplot(beer_data2)+
+  geom_bar(aes(y = state, fill = income, x = n),
+           stat = "identity", position = "fill")
+```
+
+<br><br>
+
+This graph shows the proportion of alcohol bought by each income group by state. In almost every state, the 20-60k group is spending the most on beer while the 200k+ group buys the least in every state observed. This is surprising because most people would expect that the group with the most money would buy the most beer. I think the reason for this is because people who are addicted to alcohol tend to have less money. The people who can control their usage are much more responsible with not only their drinking, but also their finances.
+
+<br><br>
+##Graph
+```{r}
+ggplot(data = beer_data, aes(x = promo, y = quantity, fill = promo)) +
+  geom_bar(stat = "identity", position = "dodge", width = 0.7) +  
+  labs(x = "Promotion", y = "Quantity Purchased", fill = "Promotion") +  
+  scale_fill_manual(values = c("#1f78b4", "#e31a1c"), guide = FALSE) + 
+  theme_minimal() 
+
+```
+
+<br><br>
+
+This graph details the significance of how promotions can effect or not effect the amount of beer people buy. In this data however it shows that people buy more beer when there isnt a promotion then when there is. 
+
+<br><br>
+
+##uyr
+```{r}
+ggplot(data = beer_data) +
+  geom_bar(mapping = aes(x = quantity, fill = buyertype))
+  
+  ggplot(data = beer_data, aes(x = factor(quantity), fill = buyertype)) +
+  geom_bar(position = "dodge", width = 0.7) +  
+  labs(x = "Quantity Purchased", y = "Count", fill = "Buyer Type") +  
+  scale_fill_viridis_d() +  
+  theme_minimal()  
+
+```
+
+In this graph the data shows the comparison of how much beer people will buy if they are married, female or male. The data indicates that the people who buy the most beer are people who are married.
+
+# Significance 
+
+Knowing who is buying the most beer and learning if the promo impacted their destination is important information. Especially if you are a business learning that a single household family would buy more beer than people with multiple families in the home is very significant. Having the knowledge that the ratio doesn't really change even with the promotion is also beneficial. This information is impactful in learning who your target demographic is for the beer market. Knowing who is participating in these sales and promotional activities will impact how companies advertise. With the data, it can also help eliminate blindspots and set realistic targets/goals, for example, if you want to have an advertisement target towards single household families or people who are not fully employed, compared to people who are fully employed. The data shows that people who have no kids, are employed full-time, and are 50+ years old buy the largest amounts of beer. Those are the people companies want to do promotion activities for. With that data, you can collect it and it will help with understanding the market you are in and decrease the risk when a sudden change happens in the economy or society such as the pandemic or inflation to state a few. With this information, companies will be able to gain more insight into the demographics in the beer market.
+
+<br><br>
+
+
+# References
+
+- [https://blog.marketresearch.com/top-10-reasons-why-you-need-market-research
+]
+

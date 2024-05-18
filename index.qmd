@@ -1,0 +1,52 @@
+---
+title: "Lillian Whiting" 
+about:
+  template: trestles  # jolla  trestles  solana  marquee  broadside
+  image: img/profile2.png
+  image-width: 16em
+  image-shape: round # rectangle  round  rounded
+  
+  links:
+    - icon: linkedin
+      text: LinkedIn
+      href: www.linkedin.com/in/lillian-whiting-908823219
+    - icon: Handshake
+      text: Handshake
+      href: https://app.joinhandshake.com/stu/users/32756194
+    - icon: github
+      text: GitHub
+      href: https://github.com/lrwhiting
+    - icon: file-earmark-pdf
+      text: Resumé
+      href: Resume_2.pdf
+      target: blank 
+    - icon: mailbox
+      text: Email
+      href: mailto:lrw8@geneseo.edu
+
+---
+
+
+Lillian Whiting Majors in Sustainable Studies and Minors in Data Analytics at SUNY Geneseo. When not working on data analytics, Lillian enjoys spending time crafting gifts for Friends and family.
+
+## Education
+
+State University of New York at Geneseo | Geneseo, NY <br>
+B.S. in Sustainability Studies | Aug 2021 - May 2025 <br>
+Minor in Data Analytics 
+
+## Experience
+
+Ticketing Officer | Work Study, Parking Enforcement | Geneseo, NY | SEPT 2021 – MAY 2022, SEPT 2022 – MAY 2023, SEPT 2023 - MAY 2024 
+
+Office Intern | Genesee County Job Center | Batavia, NY  | JULY 2022 – AUG 2022
+
+Cashier | Sammy Sunglasses| Batavia, NY | MAY 2021 – AUG 2021, 
+MAY 2019 – AUG 2019
+
+Intern | Go Art | Batavia, NY | MAY 2021 – AUG 2021, 
+MAY 2019 – AUG 2019
+
+Office Intern | Coastal Staffing | Batavia, NY | JULY 2020 – AUG 2020
+
+
