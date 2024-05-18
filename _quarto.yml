@@ -19,7 +19,7 @@ website:
 format:
   html:
     theme: 
-      light: Quartz
+      light: journal
       dark: Vapor
       
     mainfont: system-ui; 

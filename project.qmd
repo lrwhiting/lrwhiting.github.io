@@ -5,7 +5,11 @@ author:
   - name: Logan Hartstein
   - name: Tyler Thibert
 date: last-modified
-
+format:
+  html:
+    theme: 
+      light: journal
+      dark: Vapor
 
 
 execute: 
